@@ -17,7 +17,7 @@ import Contact, {
   action as contactAction,
 } from "./routes/contact";
 
-import Index from './routes/index';
+import Index from "./routes/index";
 
 const router = createBrowserRouter([
   {
