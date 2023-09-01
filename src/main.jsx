@@ -1,10 +1,15 @@
-/* existing imports */
-import Root from "./routes/root";
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <div>Hello world!</div>,
   },
 ]);
 
