@@ -5,7 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import "./index.css";
+import "./index.css"; 
+import Root from "./routes/root";
 import Root, {
   loader as rootLoader,
   action as rootAction,
