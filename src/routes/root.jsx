@@ -6,6 +6,7 @@ import {
   redirect,
   useNavigation,
   useSubmit,
+ 
 } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 import { useEffect } from "react";
@@ -17,10 +18,20 @@ export async function loader({ request }) {
   return { contacts, q };
 }
 
+export async function action() {
+  const contact = await createContact();
+  return redirect(`/contacts/${contact.id}/edit`);
+}
+
+
 export default function Root() {
   const { contacts, q } = useLoaderData();
   const navigation = useNavigation();
   const submit = useSubmit();
+
+  useEffect(() => {
+    document.getElementById("q").value = q;
+  }, [q]);
 
   const searching =
   navigation.location &&
@@ -28,10 +39,7 @@ export default function Root() {
     "q"
   );
 
-  useEffect(() => {
-    document.getElementById("q").value = q;
-  }, [q]);
-
+  
   return (
     <>
       <div id="sidebar">
@@ -60,13 +68,26 @@ export default function Root() {
             />
             <div className="sr-only" aria-live="polite"></div>
           </Form>
+          <Form method="post">
+            <button type="submit">New</button>
+          </Form>
+
         </div>
         <nav>
           {contacts.length ? (
             <ul>
               {contacts.map((contact) => (
                 <li key={contact.id}>
-                  <NavLink to={`contacts/${contact.id}`}>
+                    <NavLink
+                    to={`contacts/${contact.id}`}
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active"
+                        : isPending
+                        ? "pending"
+                        : ""
+                    }
+                    >
                     {contact.first || contact.last ? (
                       <>
                         {contact.first} {contact.last}
