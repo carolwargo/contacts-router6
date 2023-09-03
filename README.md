@@ -1,11 +1,33 @@
-# React + TypeScript + Vite
+# REACT ROUTER6 CONTACTS APPLICATION
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Application for a timed, multiple choice quiz on JavaScript fundamentals, with a progress bar HUD, color response (green for correct answers & red for incorrect answers) that allows Players to save & store high scores.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshot
+
+## User Story
+
+AS A coding boot camp student
+I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+SO THAT I can gauge my progress compared to my peers
+
+## Getting Started
+
+LOAD QUIZ: <https://carolwargo.github.io/JavaScript-quiz/>
+
+## Usage
+
+Click the start button and answers are required for each question before moving to the next- Correct answers will be highlighted in green and Incorrect answers will  be highlighted in red. In addition, a bar will be displayed to track progress. When the all the questions are answered or timer equals zero, the progress bar will reflect 100% complete and Player will be prompted to enter their Name to accompany their final score. Final score will be saved and listed for easy comparison against other players. Finally, you may choose to return to Home or take the quiz again.  
+
+## Technology
+
+HTML, CSS, JavaScript
+
+## Questions
+
+Carol Wargo
+<https://github.com/carolwargo>
 
 ## Expanding the ESLint configuration
 
